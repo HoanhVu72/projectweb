@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Bán Hàng Chuyên Nghiệp</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Thêm Font Awesome cho icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-store"></i> Shop của Tôi</h1>
+            <nav>
+                <a href="#products">Sản Phẩm</a>
+                <a href="#contact">Liên Hệ</a>
+                <div id="cart-icon" onclick="toggleCart()"><i class="fas fa-shopping-cart"></i> Giỏ Hàng (<span id="cart-count">0</span>)</div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2 class="fade-in">Chào Mừng Đến Với Shop Của Chúng Tôi</h2>
+            <p class="fade-in">Khám phá các sản phẩm chất lượng với giá tốt nhất!</p>
+            <a href="#products" class="cta-button">Xem Sản Phẩm</a>
+        </div>
+    </section>
+
+    <section id="products" class="container">
+        <h2>Sản Phẩm Nổi Bật</h2>
+        <div class="product-grid">
+            <div class="product" onclick="showProductDetail(this)" 
+                 data-description="Sản phẩm này được làm từ chất liệu cao cấp, bền bỉ và phù hợp cho mọi nhu cầu hàng ngày. Thiết kế hiện đại, dễ sử dụng." 
+                 data-rating="4">
+                <img src="https://via.placeholder.com/300x200?text=San+Pham+1" alt="Sản Phẩm 1">
+                <h3>Sản Phẩm 1</h3>
+                <p>Mô tả ngắn gọn về sản phẩm này.</p>
+                <p class="price">100.000 VND</p>
+                <button onclick="addToCart('Sản Phẩm 1', 100000); event.stopPropagation();">Thêm vào Giỏ</button>
+            </div>
+            <div class="product" onclick="showProductDetail(this)" 
+                 data-description="Một lựa chọn hoàn hảo cho những ai yêu thích sự tinh tế. Sản phẩm có độ bền cao và thiết kế sang trọng." 
+                 data-rating="5">
+                <img src="https://via.placeholder.com/300x200?text=San+Pham+2" alt="Sản Phẩm 2">
+                <h3>Sản Phẩm 2</h3>
+                <p>Mô tả ngắn gọn về sản phẩm này.</p>
+                <p class="price">200.000 VND</p>
+                <button onclick="addToCart('Sản Phẩm 2', 200000); event.stopPropagation();">Thêm vào Giỏ</button>
+            </div>
+            <div class="product" onclick="showProductDetail(this)" 
+                 data-description="Sản phẩm đa năng, dễ dàng tích hợp vào cuộc sống hàng ngày. Chất lượng vượt trội, giá cả hợp lý." 
+                 data-rating="3">
+                <img src="https://via.placeholder.com/300x200?text=San+Pham+3" alt="Sản Phẩm 3">
+                <h3>Sản Phẩm 3</h3>
+                <p>Mô tả ngắn gọn về sản phẩm này.</p>
+                <p class="price">150.000 VND</p>
+                <button onclick="addToCart('Sản Phẩm 3', 150000); event.stopPropagation();">Thêm vào Giỏ</button>
+            </div>
+            <div class="product" onclick="showProductDetail(this)" 
+                 data-description="Thiết kế độc đáo, phù hợp cho cả gia đình. Sản phẩm được kiểm định chất lượng nghiêm ngặt." 
+                 data-rating="4">
+                <img src="https://via.placeholder.com/300x200?text=San+Pham+4" alt="Sản Phẩm 4">
+                <h3>Sản Phẩm 4</h3>
+                <p>Mô tả ngắn gọn về sản phẩm này.</p>
+                <p class="price">120.000 VND</p>
+                <button onclick="addToCart('Sản Phẩm 4', 120000); event.stopPropagation();">Thêm vào Giỏ</button>
+            </div>
+            <div class="product" onclick="showProductDetail(this)" 
+                 data-description="Sản phẩm cao cấp với công nghệ tiên tiến. Mang lại trải nghiệm tuyệt vời cho người dùng." 
+                 data-rating="5">
+                <img src="https://via.placeholder.com/300x200?text=San+Pham+5" alt="Sản Phẩm 5">
+                <h3>Sản Phẩm 5</h3>
+                <p>Mô tả ngắn gọn về sản phẩm này.</p>
+                <p class="price">250.000 VND</p>
+                <button onclick="addToCart('Sản Phẩm 5', 250000); event.stopPropagation();">Thêm vào Giỏ</button>
+            </div>
+            <div class="product" onclick="showProductDetail(this)" 
+                 data-description="Lựa chọn kinh tế nhưng không kém phần chất lượng. Phù hợp cho mọi đối tượng khách hàng." 
+                 data-rating="4">
+                <img src="https://via.placeholder.com/300x200?text=San+Pham+6" alt="Sản Phẩm 6">
+                <h3>Sản Phẩm 6</h3>
+                <p>Mô tả ngắn gọn về sản phẩm này.</p>
+                <p class="price">180.000 VND</p>
+                <button onclick="addToCart('Sản Phẩm 6', 180000); event.stopPropagation();">Thêm vào Giỏ</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="container">
+        <h2>Khách Hàng Nói Gì</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p>"Sản phẩm tuyệt vời, chất lượng tốt!"</p>
+                <cite>- Nguyễn Văn A</cite>
+            </div>
+            <div class="testimonial">
+                <p>"Giá cả hợp lý, giao hàng nhanh chóng."</p>
+                <cite>- Trần Thị B</cite>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Liên Hệ Với Chúng Tôi</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Thông Tin Công Ty</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Địa chỉ: 123 Đường ABC, Quận XYZ, TP.HCM</p>
+                <p><i class="fas fa-phone"></i> Điện thoại: 0123-456-789</p>
+                <p><i class="fas fa-envelope"></i> Email: info@shopcuatoi.com</p>
+                <p><i class="fas fa-clock"></i> Giờ làm việc: 8:00 - 18:00 (Thứ 2 - Chủ Nhật)</p>
+            </div>
+            <div class="contact-form">
+                <h3>Gửi Tin Nhắn</h3>
+                <form id="contact-form">
+                    <input type="text" placeholder="Tên của bạn" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Tin nhắn của bạn" rows="5" required></textarea>
+                    <button type="submit">Gửi Tin Nhắn</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2>Giỏ Hàng</h2>
+            <ul id="cart-items"></ul>
+            <p>Tổng: <span id="cart-total">0</span> VND</p>
+            <button onclick="checkout()">Thanh Toán</button>
+        </div>
+    </div>
+
+    <!-- Modal chi tiết sản phẩm -->
+    <div id="product-detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductDetail()">&times;</span>
+            <div id="product-detail-content">
+                <img id="detail-img" src="" alt="">
+                <h2 id="detail-name"></h2>
+                <p id="detail-description"></p>
+                <div id="detail-rating"></div>
+                <button id="detail-add-to-cart">Thêm vào Giỏ</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Shop Của Tôi. Tất cả quyền được bảo lưu.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
